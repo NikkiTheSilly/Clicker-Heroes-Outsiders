@@ -280,7 +280,7 @@ function refresh(test, ancientSouls, simulating) {
     let borbLevel = 0;
 
     if (this.getCostFromLevel(borbLevel) > (this.remainingAncientSouls - 5)) {
-        borbLevel = this.spendAS(1, this.remainingAncientSouls - 5);
+        borbLevel = 0;
     }
 
     this.remainingAncientSouls -= this.getCostFromLevel(borbLevel);
