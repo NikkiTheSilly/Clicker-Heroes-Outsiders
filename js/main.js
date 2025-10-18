@@ -142,7 +142,7 @@ function getBorbFant( ancientSouls, transcendentPower ) {
     logHSFant += Math.log10(chorBonus);
     let kumaFant = Math.max(1, Math.floor(logHSFant / Math.log10(2) - 3 / Math.log(2)) - 1);
     let kumaEffect = 8 * (1 - Math.exp(-0.025 * kumaFant));
-    let borbRequired = Math.ceil((8 / kumaEffect - 1) * 8);
+    let borbRequired = 0*Math.ceil((8 / kumaEffect - 1) * 8);
     return borbRequired;
 }
 
