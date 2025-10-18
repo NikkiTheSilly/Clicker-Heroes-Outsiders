@@ -450,16 +450,16 @@ function tpDisplay(ancientSouls) {
     return tp.toString().substring(0,tp<10?6:7) + "%";
 }
 
-function test() {
-    var cases = [0,1,10,100,500,1000,5000,10000,12500,15000,17500,20000,50000,100000,200000,300000,400000,500000];
-        readout = "[\n";
-    for (i=0;i<cases.length;i++) {
-        readout += "    " + refresh(true,cases[i]) + ",\n";
-    }
-    readout = readout.slice(0, -2);
-    readout += "\n]";
-    console.log(readout);
-}
+//function test() {
+   // var cases = [0,1,10,100,500,1000,5000,10000,12500,15000,17500,20000,50000,100000,200000,300000,400000,500000];
+     //   readout = "[\n";
+  //  for (i=0;i<cases.length;i++) {
+    //    readout += "    " + refresh(true,cases[i]) + ",\n";
+   // }
+  //  readout = readout.slice(0, -2);
+  //  readout += "\n]";
+  //  console.log(readout);
+//}
 
 function enterKey(ev) {
     if (ev.which === 13) {
