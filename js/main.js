@@ -277,7 +277,7 @@ function refresh(test, ancientSouls, simulating) {
     let borbHze = this.remainingAncientSouls >= 21000
         ? borbCap
         : Math.min(this.spendAS(ancientSouls >= 50 ? 0.99 : 0.5, this.remainingAncientSouls), borbCap + 1);
-    let borbLevel = Math.max(borbFant, borbHze);
+    let borbLevel = 0;
 
     if (this.getCostFromLevel(borbLevel) > (this.remainingAncientSouls - 5)) {
         borbLevel = this.spendAS(1, this.remainingAncientSouls - 5);
