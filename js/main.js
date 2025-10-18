@@ -183,10 +183,7 @@ function refresh(test, ancientSouls, simulating) {
 
     // Outsider Caps
     let borbCap = 0
-      //  ? Math.ceil((borbTarget - 500) / 5000)
-       // : ancientSouls >= 10500
-       //     ? Math.ceil((this.newHze - 500) / 5000)
-       //     : Math.max(0, Math.ceil(((unbuffedMonstersPerZone - 2.1) / - kuma - 1) / 0.125));
+
     let rhageistCap = Math.ceil(((100 - unbuffedPrimalBossChance) / atman - 1) / 0.25);
     let kariquaCap = Math.ceil(((unbuffedBossHealth - 5) / -bubos - 1) / 0.5);
     let orphalasCap = Math.max(1, Math.ceil(((2 - unbuffedBossTimer) / chronos - 1) / 0.75)) + 2;
@@ -222,8 +219,11 @@ function refresh(test, ancientSouls, simulating) {
 
     // Outsider Leveling
     this.remainingAncientSouls = ancientSouls;
+
+    // please let this get rid of that stupid snake
+    let borbLevel = 0;
+    this.remainingAncientSouls -= this.getCostFromLevel(borbLevel);
     
- 
     // Xyl sucks
     let xyliqilLevel = 0;
     this.remainingAncientSouls -= this.getCostFromLevel(xyliqilLevel);
@@ -274,20 +274,7 @@ function refresh(test, ancientSouls, simulating) {
     this.ancientSoulsDiff = this.newAncientSouls - ancientSouls;
     this.newTranscendentPower = (25 - 23 * Math.exp(-0.0003 * this.newAncientSouls)) / 100;
 
-    //test log
-    var unspent = this.remainingAncientSouls + (unspentAncientSouls||0);
-    if (test) {
-        return (JSON.stringify({
-            ancientSouls: ancientSouls,
-            expectedLevels: [xyliqilLevel,chorLevel,phanLevel,ponyLevel,borbLevel,rhageistLevel,kariquaLevel,orphalasLevel,senakhanLevel],
-            expectedRemaining: unspent,
-            newHze: this.newHze,
-            newLogHeroSouls: newLogHeroSouls,
-            newAncientSouls: this.newAncientSouls,
-            newTranscendentPower: this.newTranscendentPower*100
-        }));
-    }
-    
+  
     //transcensionSimulator
     var buffedMPZ = unbuffedMonstersPerZone + kuma*( 1 + borbLevel/8 );
     if (simulating) return [ancientSouls, borbLevel, this.newHze, buffedMPZ, this.newAncientSouls];
@@ -360,7 +347,7 @@ function refresh(test, ancientSouls, simulating) {
         rhageistLevel+'/'+
         kariquaLevel+'/'+
         orphalasLevel+'/'+
-        senakhanLevel
+        senakhanLevel+' boop'
     );
     $("#unspentAS").html( "Unspent: " + unspent );
     $("#results").show();
