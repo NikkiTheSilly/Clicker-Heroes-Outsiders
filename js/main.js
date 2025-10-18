@@ -162,22 +162,7 @@ function refresh(test, ancientSouls, simulating) {
 
     // Figure out goals for this transcendence
     this.newHze = Math.floor(zoneOverride||0);
-    borbTarget = 0;
-    if(this.newHze==0){
-    if (ancientSouls == 0) {
-        this.newHze = 300;
-    } else if (ancientSouls < 100) {
-        let a = ancientSouls + 42;
-        this.newHze = (a / 5 - 6) * 51.8 * Math.log(1.25) / Math.log(1 + transcendentPower);
-    } else if (ancientSouls < 10500) {
-        this.newHze = (1 - Math.exp(-ancientSouls / 3900)) * 200000 + 4800;
-    } else if (ancientSouls < 21000) {
-        let x = 8000 + (10500 - ancientSouls) / 10500 * 4000;
-        this.newHze = ancientSouls*10.32 + x*12;
-    } else {
-        let nonBorb = ancientSouls > 433000 ? 500 : 1000;
-       
-    this.newHze = Math.floor(this.newHze);
+
     let newLogHeroSouls = Math.log10(1 + transcendentPower) * this.newHze / 5 + 6;
 
     // Ancient effects
