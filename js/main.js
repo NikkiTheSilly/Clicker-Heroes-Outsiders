@@ -65,7 +65,7 @@ function nOS( ancientSouls, transcendentPower, zone ) {
     }
     let hpMultiplier = Math.min(1.545, 1.145 + zone / 500000);
     let hsMultiplier = Math.pow(1 + transcendentPower, 0.2);
-    let heroDamageMultiplier = (zone > 1.2e6) ? 1000 : ((zone > 168000) ? 4.5 : 4);
+    let heroDamageMultiplier = (zone > 1.2e6) ? 1000 : 4);
     let heroCostMultiplier = (zone > 1.2e6) ? 1.22 : 1.07;
     let goldToDps = Math.log10(heroDamageMultiplier) / Math.log10(heroCostMultiplier) / 25;
     let dpsToZones = Math.log10(hpMultiplier) - Math.log10(1.15) * goldToDps;
@@ -229,11 +229,11 @@ function refresh(test, ancientSouls, simulating) {
     let unbuffedPrimalBossChance = 25 - nerfs * 2;
 
     // Outsider Caps
-    let borbCap = borbTarget
-        ? Math.ceil((borbTarget - 500) / 5000)
-        : ancientSouls >= 10500
-            ? Math.ceil((this.newHze - 500) / 5000)
-            : Math.max(0, Math.ceil(((unbuffedMonstersPerZone - 2.1) / - kuma - 1) / 0.125));
+    let borbCap = 0
+      //  ? Math.ceil((borbTarget - 500) / 5000)
+       // : ancientSouls >= 10500
+       //     ? Math.ceil((this.newHze - 500) / 5000)
+       //     : Math.max(0, Math.ceil(((unbuffedMonstersPerZone - 2.1) / - kuma - 1) / 0.125));
     let rhageistCap = Math.ceil(((100 - unbuffedPrimalBossChance) / atman - 1) / 0.25);
     let kariquaCap = Math.ceil(((unbuffedBossHealth - 5) / -bubos - 1) / 0.5);
     let orphalasCap = Math.max(1, Math.ceil(((2 - unbuffedBossTimer) / chronos - 1) / 0.75)) + 2;
