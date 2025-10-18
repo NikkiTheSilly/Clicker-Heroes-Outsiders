@@ -274,16 +274,14 @@ function refresh(test, ancientSouls, simulating) {
     let borbFant = ancientSouls <= 2000
         ? Math.min(this.spendAS(0.35, this.remainingAncientSouls), borbFantR)
         : 0;
-    let borbHze = this.remainingAncientSouls >= 21000
-        ? borbCap
-        : Math.min(this.spendAS(ancientSouls >= 50 ? 0.99 : 0.5, this.remainingAncientSouls), borbCap + 1);
+    let borbHze = 0;
     let borbLevel = 0;
 
     if (this.getCostFromLevel(borbLevel) > (this.remainingAncientSouls - 5)) {
         borbLevel = 0;
     }
 
-    this.remainingAncientSouls -= this.getCostFromLevel(borbLevel);
+    this.remainingAncientSouls -= 0;
     
     // Xyl sucks
     let xyliqilLevel = 0;
